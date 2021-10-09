@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.header{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 100%;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  width: 100%;
+}
+
+.item-nav{
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: white;
+}
+
+.logo{
+  width: 3rem;
+  height: 3rem;
+  padding: 10px;
+}

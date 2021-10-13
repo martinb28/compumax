@@ -10,15 +10,15 @@
   display: flex;
   flex-direction: row;  
   width: 100%;
-  margin-left: 50%;
+  margin-left: 46%;
 }
 
 .item-nav{
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-right: 20px;
   color: white;
-  text-align: right;
+  
   
 }
 

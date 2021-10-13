@@ -4,7 +4,7 @@ import { CartWidget } from './CartWidget';
 export const Navbar = () => {
     return (
         <header className="header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Compumax_logo.svg/1200px-Compumax_logo.svg.png" alt="logo" className= "logo"/>
+            <img src="img/compumax_logo.png" alt="logo" className= "logo"/>
             <nav className="navbar">                
                 <p className = "item-nav">Notebooks</p>
                 <p className = "item-nav">Pc Armadas</p>

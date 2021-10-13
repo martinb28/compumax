@@ -1,4 +1,5 @@
 import React from 'react';
+import { CartWidget } from './CartWidget';
 
 export const Navbar = () => {
     return (
@@ -11,6 +12,7 @@ export const Navbar = () => {
                 <p className = "item-nav">Perifericos</p>
                 <p className = "item-nav">Contactos</p>
             </nav>
+            <CartWidget/>
         </header>
     );
 };

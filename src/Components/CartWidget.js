@@ -1,9 +1,10 @@
 import React from 'react'
 
-export const Layout = ({children}) => {
+
+export const CartWidget = () => {
     return (
         <div>
-            {children}
+            
         </div>
     )
 }

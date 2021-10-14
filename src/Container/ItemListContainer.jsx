@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({children}) => {
     return (
         <div>
-            <h1>¡Bienvenidos a Compumax!</h1>
+            <h1>{children}</h1>
         </div>
     )
 }

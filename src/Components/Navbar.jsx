@@ -3,16 +3,21 @@ import { CartWidget } from './CartWidget';
 
 export const Navbar = () => {
     return (
-        <header className="header">
-            <img src="img/compumax_logo.png" alt="logo" className= "logo"/>
-            <nav className="navbar">                
-                <p className = "item-nav">Notebooks</p>
-                <p className = "item-nav">Pc Armadas</p>
-                <p className = "item-nav">Hardware</p>
-                <p className = "item-nav">Perifericos</p>
-                <p className = "item-nav">Contactos</p>
+        <header>
+            <nav className="flex justify-between items-center h-16 bg-gray-700 text-white relative shadow-sm"> 
+                <img src="img/compumax_logo.png" alt="logo" className= "w-40 h-12 p-2.5"/>
+                    
+
+                    <div className="flex mt-1 ml-2.5 mr-5 ">
+                        <p className= "p-3">Notebooks</p>
+                        <p className= "p-3">Pc Armadas</p>
+                        <p className= "p-3">Hardware</p>
+                        <p className= "p-3">Perifericos</p>
+                        <p className= "p-3">Contactos</p>                
+                        <CartWidget/>
+                    </div>
             </nav>
-            <CartWidget/>
+            
         </header>
     );
 };

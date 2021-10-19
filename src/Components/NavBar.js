@@ -14,7 +14,7 @@ export const Navbar = () => {
                         <p className= "p-3">Hardware</p>
                         <p className= "p-3">Perifericos</p>
                         <p className= "p-3">Contactos</p>                
-                        <CartWidget/>
+                        <CartWidget />
                     </div>
             </nav>
             

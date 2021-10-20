@@ -2,17 +2,29 @@ import React from 'react'
 
 const Item = ({nombre, desc, precio, imagen}) => {
     return(
-    <div class="max-w-md flex rounded flex-wrap overflow-hidden shadow-sm">
-        <img class="w-40 h-40"src={imagen} alt = {nombre}/>
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">{nombre}</div>
-                <p class="text-gray-700 text-base">{desc}</p>
-            </div>
-        <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">${precio}</span>    
+        <div class="max-w-lg mx-auto">
+    <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
+        <img class="rounded-t-lg" src={imagen} alt = {nombre}/>
+        
+        <div class="p-5">
+            
+                <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">{nombre}</h5>
+            
+            <p class="font-normal text-gray-700 mb-3">{desc}</p>
+            <p class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" >
+                ${precio}
+            </p>
         </div>
     </div>
+    
+</div>
     )
 }
 
 export default Item;
+
+
+
+
+
+

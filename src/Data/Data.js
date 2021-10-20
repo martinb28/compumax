@@ -43,7 +43,7 @@ const Data = [
         categoria: 'Perifericos',
         stock: '5',
         imagen:'/img/auris.jpg'
-    },
+    },    
 ]
 
 export default Data;

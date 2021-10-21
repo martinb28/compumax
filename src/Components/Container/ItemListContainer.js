@@ -10,11 +10,14 @@ const ItemListContainer = (props) => {
         const listaDeProductos = new Promise((res,rej) =>{
             setTimeout(()=>{
                 res(data)
+                rej("Error en carga de items")
             },3000)
         })
         listaDeProductos.then((data)=>{
             setProductos(data)
             setCargando(false)
+        }).catch((error) =>{
+            console.log("error!: "+ error)
         })
     },[])
     return(

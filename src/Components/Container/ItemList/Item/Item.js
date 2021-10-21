@@ -2,7 +2,7 @@ import React from 'react'
 
 const Item = ({nombre, desc, precio, imagen}) => {
     return(
-        <div class="max-w-lg mx-auto">
+        <div class=" flex flex-row flex-wrap max-w-lg mx-auto">
     <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
         <img class="rounded-t-lg" src={imagen} alt = {nombre}/>
         

@@ -23,7 +23,9 @@ const ItemListContainer = (props) => {
     return(
         <div>
             <h1>{props.titulo}</h1>
-            {cargando ? <h2>Cargando productos...</h2> : <ItemList productos={productos}/>}
+            <div className='grid grid-flow-row grid-rows-2 grid-cols-3 gap-1'>
+                {cargando ? <h2>Cargando productos...</h2> : <ItemList productos={productos}/>}
+            </div> 
         </div>
     )
 }

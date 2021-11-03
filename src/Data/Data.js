@@ -1,7 +1,7 @@
 const Data = [
     {
         id:'1',
-        nombre:'GABINETE AEROCOOL ZAURON FRGB',
+        nombre:'GABINETE AEROCOOL ZAURON RGB',
         desc: 'Gabinete mid tower de alto rendimiento con un diseño de panel frontal audaz y elegante. ',
         precio: '4450',
         categoria: 'gabinetes',
@@ -13,7 +13,7 @@ const Data = [
         nombre:'PC armada I7',
         desc: 'El Core i7 de 9ª Generación es capaz de brindar el mejor rendimiento en tareas como producción musical, edición y programación. ',
         precio: '79990',
-        categoria: 'PC armadas',
+        categoria: 'pcarmadas',
         stock: '5',
         imagen:'/img/PCArmada.jpg'
     },
@@ -22,7 +22,7 @@ const Data = [
         nombre:'Notebook Asus',
         desc: 'Ya sea para trabajar o jugar, el ASUS X515 es el computador portátil que ofrece un potente rendimiento.',
         precio: '71999',
-        categoria: 'Notebooks',
+        categoria: 'notebooks',
         stock: '5',
         imagen:'/img/Notebook.jpg'
     },
@@ -31,7 +31,7 @@ const Data = [
         nombre:'Placa de video Palit NVIDIA Geforce RTX 3090 GAMING PRO 24GB',
         desc: 'La GeForce RTX ™ 3090 es enormemente poderosa en todos los sentidos.',
         precio: '523999',
-        categoria: 'Hardware',
+        categoria: 'hardware',
         stock: '5',
         imagen:'/img/PlacaDeVideo.jpg'
     },
@@ -40,7 +40,7 @@ const Data = [
         nombre:'Auricular inalambrico Logitech G G733 Black RGB',
         desc: 'Por fin, unos audífonos que pueden ser tan expresivos como tú.',
         precio: '15690',
-        categoria: 'Perifericos',
+        categoria: 'perifericos',
         stock: '5',
         imagen:'/img/auris.jpg'
     },    

@@ -1,25 +1,27 @@
 import React, {useState, useEffect} from 'react';
 import ItemList from './ItemList/ItemList';
 import data from '../../Data/Data';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = (props) => {
         const [productos, setProductos] = useState([])
         const[cargando, setCargando] = useState(true)
+        const {categoriaId} = useParams();
+        
 
     useEffect(() =>{
-            const listaDeProductos = new Promise((res,rej) =>{
+            setCargando(true);
+            const listaDeProductos = new Promise((res) =>{
                 setTimeout(()=>{
-                    res(data)
-                    rej("Error en carga de items")
+                    res(data)                    
                 },3000)
             })
-            listaDeProductos.then((data)=>{
-                setProductos(data)
-                setCargando(false)
-            }).catch((error) =>{
-                console.log("error!: "+ error)
+            listaDeProductos.then((res)=>{
+                categoriaId ? setProductos(res.filter(i => i.categoria === categoriaId)):
+                setProductos(res);
+                setCargando(false);
             })
-        },[])
+        },[categoriaId])
     return(
             <div>
                     <h1>{props.titulo}</h1>

@@ -17,7 +17,9 @@ function App() {
                     <Route exact path = '/categoria/:categoriaId'>
                     <ItemListContainer greeting={'Categoria'} />
                     </Route>
-                    <Route path="/item/:id" component={ItemDetailContainer} />
+                    <Route exact path="/item/:id">
+                    <ItemDetailContainer/>
+                    </Route>
                     <Route exact path = '*'>
                         <Redirect to='/' />
                     </Route>

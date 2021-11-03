@@ -6,7 +6,7 @@ export const Navbar = () => {
     return (
         <header>
             <nav className="flex justify-between items-center h-16 bg-gray-700 text-white relative shadow-sm"> 
-                <Link to= "/"><img src="img/compumax_logo.png" alt="logo" className= "w-40 h-12 p-2.5"/></Link>
+                <Link to= "/"><img src="/img/compumax_logo.png" alt="logo" className= "w-40 h-12 p-2.5"/></Link>
                     
 
                     <div className="flex mt-1 ml-2.5 mr-5 ">

@@ -30,7 +30,7 @@ Uso de React Router Dom para la navegación
 
 Aplicación en desarrollo
 
-
+![Demo Compumax](https://gifyu.com/image/etPH)
 ### Autor
 #### Martin Adrian Bugao
 

@@ -24,7 +24,7 @@ const ItemListContainer = (props) => {
         },[categoriaId])
     return(
             <div>
-                    <h1>{props.titulo}</h1>
+                    <h1 className= 'text-center underline uppercase'>{categoriaId}</h1>
                     <div className='grid grid-flow-row grid-rows-2 grid-cols-3 gap-1'>
                             {cargando ? <h2>Cargando productos...</h2> : <ItemList productos={productos}/>}
                     </div> 

@@ -3,7 +3,7 @@ import ItemList from './ItemList/ItemList';
 import data from '../../Data/Data';
 import { useParams } from 'react-router-dom';
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
         const [productos, setProductos] = useState([])
         const[cargando, setCargando] = useState(true)
         const {categoriaId} = useParams();

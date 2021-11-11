@@ -1,6 +1,18 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
+import ItemCount from '../itemCount/ItemCount';
+import { Link } from 'react-router-dom';
+import { Context } from '../../context/CartContext';
 
-export const ItemDetail = ({ id, nombre, imagen, desc,precio }) => {
+export const ItemDetail = ({ id, nombre, imagen, desc, precio, stock }) => {
+  
+    const [compra, setCompra] = useState(false)
+    const {onAdd} = useContext(Context)
+
+    const agregar = (props)=>{
+        setCompra(true)
+        onAdd({id, nombre, precio}, props.unidades)
+    }
+
   return !id ? (
     <h1>EL ITEM NO EXISTE</h1>
   ) : (
@@ -25,7 +37,8 @@ export const ItemDetail = ({ id, nombre, imagen, desc,precio }) => {
                         <span class="font-bold text-5xl leading-none align-baseline">{precio}</span>
                     </div>
                     <div class="inline-block align-bottom">
-                        <button class="bg-blue-700 opacity-75 hover:opacity-100 text-gray-800 hover:text-gray-900 rounded-full px-10 py-2 font-semibold"><i class="mdi mdi-cart -ml-2 mr-2"></i> Comprar</button>
+                        
+                        {!compra? <ItemCount stock={stock} onAdd = {agregar}/> : <Link to='/cart'><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Terminar Compra</button></Link>}
                     </div>
                 </div>
             </div>

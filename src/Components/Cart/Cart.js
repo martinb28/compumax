@@ -3,7 +3,7 @@ import { Context } from "../context/CartContext";
 
 const Cart = (props) =>{
 
-    const {cart, unidades, total} = useContext(Context)
+    const {cart, unidades, total, quitarItem, vaciarCarro} = useContext(Context)
     return(
     <>
     <p> tu carrito acumuló un total de ${total} y tiene {unidades} unidad(es)</p>
@@ -13,8 +13,8 @@ const Cart = (props) =>{
                 <h2>precio:{item.precio}</h2>
                 <h2>cantidad:{item.cantidad}</h2>
                 <h2>subtotal:{item.subtotal}</h2>
-                <button onClick = {() => props.quitarItem()} >quitar {item.id}</button>
-                {/* <button vaciarCarro> Vaciar carro</button> */}
+                <button onClick = {() => quitarItem()} >quitar {item.id}</button>
+                <button onClick = {() => vaciarCarro()}> Vaciar carro</button>
             </div>
             )}
 

@@ -27,12 +27,16 @@ const CartFuncion = ({children}) =>{
     }
     
     const quitarItem =(element) =>{
+        let product = cart.filter(item => item.id === element)
+        setTotal(total - product[0].precio)
         setCart(cart.filter(item => item.id !== element))
-        
+        setUnidades(unidades - 1)
     }
 
     const vaciarCarro = () =>{
         setCart([])
+        setTotal(0)
+        setUnidades(0)
     }
 
     return <Context.Provider value={{cart, unidades, total, onAdd, quitarItem, vaciarCarro}}>

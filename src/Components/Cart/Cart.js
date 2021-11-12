@@ -13,7 +13,7 @@ const Cart = (props) =>{
                 <h2>precio:{item.precio}</h2>
                 <h2>cantidad:{item.cantidad}</h2>
                 <h2>subtotal:{item.subtotal}</h2>
-                <button onClick = {() => quitarItem()} >quitar {item.id}</button>
+                <button onClick = {() => quitarItem(item.id)} >quitar {item.id}</button>
                 <button onClick = {() => vaciarCarro()}> Vaciar carro</button>
             </div>
             )}

@@ -8,6 +8,7 @@ const CartFuncion = ({children}) =>{
     const [total, setTotal] = useState(0)
 
     const onAdd = (producto, cantidad) => {
+        console.log('entre al add')
         const itemExiste = cart.find(item => item.id === producto.id)
         if (!itemExiste){
             setCart([...cart, {id:producto.id, nombre:producto.nombre, precio:producto.precio, cantidad:cantidad, subtotal:(producto.precio * cantidad)}])
@@ -26,8 +27,17 @@ const CartFuncion = ({children}) =>{
         }
     }
     
+    const quitarItem =() =>{
+        console.log('Entre a quitar item')
+        // setCart(cart.filter(item => item.id !== element))
+        
+    }
 
-    return <Context.Provider value={{cart, unidades, total, onAdd}}>
+    // const vaciarCarro = () =>{
+    //     setCart([])
+    // }
+
+    return <Context.Provider value={{cart, unidades, total, onAdd, quitarItem}}>
      {children}
     </Context.Provider>
 }

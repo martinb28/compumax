@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { Context } from "../context/CartContext";
 
-const Cart = () =>{
+const Cart = (props) =>{
 
     const {cart, unidades, total} = useContext(Context)
     return(
@@ -13,7 +13,8 @@ const Cart = () =>{
                 <h2>precio:{item.precio}</h2>
                 <h2>cantidad:{item.cantidad}</h2>
                 <h2>subtotal:{item.subtotal}</h2>
-                <button>{item.id}</button>
+                <button onClick = {() => props.quitarItem()} >quitar {item.id}</button>
+                {/* <button vaciarCarro> Vaciar carro</button> */}
             </div>
             )}
 

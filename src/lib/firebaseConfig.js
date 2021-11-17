@@ -20,7 +20,7 @@ initializeApp(firebaseConfig);
 const db = getFirestore();
 
 export const allItem = () => {
-  const query = getDocs(collection(db, 'productos'))
+  const query = getDocs(collection(db, 'Productos'))
   return query 
 }
 

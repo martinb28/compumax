@@ -13,9 +13,7 @@ export const ItemDetail = ({ id, nombre, imagen, desc, precio, stock }) => {
         onAdd({id, nombre, precio}, props.unidades)
     }
 
-  return !id ? (
-    <h1>EL ITEM NO EXISTE</h1>
-  ) : (
+  return (
     <>
 <div className="min-w-screen min-h-screen flex items-center p-5 lg:p-10 overflow-hidden relative">
     <div className="w-full max-w-6xl rounded bg-white shadow-xl p-10 lg:p-20 mx-auto text-gray-800 relative md:text-left">

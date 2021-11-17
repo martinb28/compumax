@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app"
-import { getFirestore } from "firebase/firestore"
+import { doc, getFirestore } from "firebase/firestore"
+import {collection, getDocs, where, query, getDoc} from "firebase/firestore"
 // import 'firebase/compat/aut';
 // import 'firebase/compat/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
@@ -15,15 +16,23 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_ID
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
+const db = getFirestore();
 
-//METHOD TO RETURN FIRESTORE DATABASE WITH CONFIG
-const getFirestoreDb = () => {
-  return getFirestore(app);
+export const allItem = () => {
+  const query = getDocs(collection(db, 'productos'))
+  return query 
 }
 
-export {
-  app,
-  getFirestoreDb,
+export const itemCat = (categoria) => {
+  const queryCat = collection(db, 'items')
+  const queryCat2 = query(queryCat, where ('categoria', '==', categoria))
+  const queryCat3 = getDocs(queryCat2)
+  return queryCat3
+}
+
+export const only = (id) => {
+  const q = doc(db, 'items', id)
+  const q2 = getDoc(q)
+  return q2
 }

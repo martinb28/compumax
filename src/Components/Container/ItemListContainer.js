@@ -1,31 +1,38 @@
 import React, {useState, useEffect} from 'react';
 import ItemList from './ItemList/ItemList';
-import data from '../../Data/Data';
-import { getFirestoreDb } from '../../lib/firebaseConfig';
-import { collection, getDocs, where, query } from "firebase/firestore"; //collection, query, getDocs, where
+import { allItem, itemCat } from '../../lib/firebaseConfig';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
-        const db = getFirestoreDb()
+        
         const [productos, setProductos] = useState([])
         const[cargando, setCargando] = useState(true)
         const {categoriaId} = useParams();
         
 
     useEffect(() =>{
-        const getProductById = async () => {
-            setCargando(false)
-            const queryCollection  = query(collection(db, 'products'), where('id', '==', `${categoriaId}`));
-            const querySnapshot = await getDocs(queryCollection);
-            let aux = {};
-            querySnapshot.forEach((doc) => {
-              aux = {...doc.data()}
-            
-            });
-            setProductos(aux);
-          }
-          getProductById();
-      }, []);
+        if (categoriaId != null){
+                const items=itemCat(categoriaId)
+                items.then((data) => {
+                        const itemsAux =[]
+                        data.forEach(item => {
+                            itemsAux.push({id:item.id, nombre:item.data().nombre, desc:item.data().desc, precio:item.data().precio, stock:item.data().stock, imagen:item.data().imagen })    
+                        });
+                        setProductos(itemsAux)
+                        setCargando(false)
+                })
+        } else {
+                const items=allItem()
+                items.then((data) => {
+                        const itemsAux =[]
+                        data.forEach(item => {
+                            itemsAux.push({id:item.id, nombre:item.data().nombre, desc:item.data().desc, precio:item.data().precio, stock:item.data().stock, imagen:item.data().imagen })    
+                        });
+                        setProductos(itemsAux)
+                        setCargando(false)
+                })
+        }
+      }, [categoriaId]);
     return(
             <div>
                     <h1 className= 'text-center underline uppercase'>{categoriaId}</h1>

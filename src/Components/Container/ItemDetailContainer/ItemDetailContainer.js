@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { db } from '../../lib/firebaseConfig';
+import  db from '../../../lib/firebaseConfig';
 import { doc, getDoc  } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ export const ItemDetailContainer = () => {
 
   useEffect(() => {
     setCargando(true)
-    const item = doc(db, 'productos', id)
+    const item = doc(db, 'Productos', id)
 
     getDoc(item).then(res => {
       const resultado ={id: res.id, ...res.data()};

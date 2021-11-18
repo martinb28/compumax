@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ItemList from './ItemList/ItemList';
-import { db } from '../../lib/firebaseConfig';
+import  db from '../../lib/firebaseConfig';
 import { collection, query, where, getDocs  } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 
@@ -12,12 +12,12 @@ const ItemListContainer = () => {
         
 
     useEffect(() =>{
-        setCargando(true)
+        setCargando(false)
         
         const misItems = categoriaId ? 
-        query(collection(db, 'productos'), where ('category', "==", categoriaId))
+        query(collection(db, 'Productos'), where ('categoria', "==", categoriaId))
         :
-        collection(db, 'productos')
+        collection(db, 'Productos')
         ;
 
         getDocs(misItems).then(res => {

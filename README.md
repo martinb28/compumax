@@ -28,7 +28,7 @@ Uso de TailwindCSS para dar formato a la aplicación.
 
 Uso de React Router Dom para la navegación
 
-Aplicación en desarrollo
+Uso de Firebase como base de datos
 
 ![Demo Compumax](https://s10.gifyu.com/images/React_App_-_Personal_-_Microsoft__Edge_2021-11-03_20-59-49_SparkVideo-1.gif)
 ### Autor

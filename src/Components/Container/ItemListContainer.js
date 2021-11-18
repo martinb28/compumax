@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ItemList from './ItemList/ItemList';
-import { allItem, itemCat } from '../../lib/firebaseConfig';
+import { db } from '../../lib/firebaseConfig';
+import { collection, query, where, getDocs  } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
@@ -11,27 +12,20 @@ const ItemListContainer = () => {
         
 
     useEffect(() =>{
-        if (categoriaId != null){
-                const items=itemCat(categoriaId)
-                items.then((data) => {
-                        const itemsAux =[]
-                        data.forEach(item => {
-                            itemsAux.push({id:item.id, nombre:item.data().nombre, desc:item.data().desc, precio:item.data().precio, stock:item.data().stock, imagen:item.data().imagen })    
-                        });
-                        setProductos(itemsAux)
-                        setCargando(false)
+        setCargando(true)
+        
+        const misItems = categoriaId ? 
+        query(collection(db, 'productos'), where ('category', "==", categoriaId))
+        :
+        collection(db, 'productos')
+        ;
+
+        getDocs(misItems).then(res => {
+                const resultado = res.docs.map(doc =>{
+                        return{...doc.data(), id:doc.id}
                 })
-        } else {
-                const items=allItem()
-                items.then((data) => {
-                        const itemsAux =[]
-                        data.forEach(item => {
-                            itemsAux.push({id:item.id, nombre:item.data().nombre, desc:item.data().desc, precio:item.data().precio, stock:item.data().stock, imagen:item.data().imagen })    
-                        });
-                        setProductos(itemsAux)
-                        setCargando(false)
-                })
-        }
+                setProductos(resultado)
+        }).finally(()=> setCargando(false));
       }, [categoriaId]);
     return(
             <div>

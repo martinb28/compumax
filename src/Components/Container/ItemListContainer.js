@@ -12,7 +12,7 @@ const ItemListContainer = () => {
         
 
     useEffect(() =>{
-        setCargando(false)
+        setCargando(true)
         
         const misItems = categoriaId ? 
         query(collection(db, 'Productos'), where ('categoria', "==", categoriaId))

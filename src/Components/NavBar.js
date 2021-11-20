@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { CartWidget } from './CartWidget';
 import { Link } from 'react-router-dom';
+import {Context} from "../Components/context/CartContext";
 
 export const Navbar = () => {
+    const {unidades} = useContext(Context)
     return (
         <header>
             <nav className="flex justify-between items-center h-16 bg-gray-700 text-white relative shadow-sm"> 
@@ -15,7 +17,7 @@ export const Navbar = () => {
                         <Link to="/categoria/hardware"className= "p-3">Hardware</Link>
                         <Link to="/categoria/perifericos"className= "p-3">Perifericos</Link>
                         <Link to="/categoria/gabinetes"className= "p-3">Gabinetes</Link>                
-                        <CartWidget />
+                        {unidades ? <Link to="/cart"><CartWidget/></Link> : <CartWidget/>}
                     </div>
             </nav>
             

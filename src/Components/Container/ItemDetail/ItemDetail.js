@@ -37,6 +37,7 @@ export const ItemDetail = ({ id, nombre, imagen, desc, precio, stock }) => {
                     <div className="inline-block align-bottom">
                         
                         {!compra? <ItemCount stock={stock} onAdd = {agregar}/> : <Link to='/cart'><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Terminar Compra</button></Link>}
+                        {!compra? <div></div> : <Link to='/'><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Seguir Comprando</button></Link>}
                     </div>
                 </div>
             </div>

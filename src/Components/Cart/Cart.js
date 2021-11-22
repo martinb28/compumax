@@ -1,10 +1,28 @@
 import React, {useContext} from "react";
 import { Context } from "../context/CartContext";
 import { Link } from 'react-router-dom';
+import  db from '../../lib/firebaseConfig';
+import { collection, addDoc  } from 'firebase/firestore';
 
 const Cart = (props) =>{
-
     const {cart, unidades, total, quitarItem, vaciarCarro} = useContext(Context)
+    const addPedido = async () => {                
+        try {
+            const docRef = await addDoc(collection(db, "ordenes"), {
+                comprador: {
+                    mail: "martin@google.com",
+                    nombre: "martin",
+                    telefono: "12345968741"
+                },
+                productos : cart,
+                total: total
+
+            });
+            console.log("DocumentID: ", docRef.id);
+          } catch (e) {
+            console.error("Error: ", e);
+          }
+    }
     
     return(
     <>
@@ -19,7 +37,9 @@ const Cart = (props) =>{
 
         </div></>
             )}
-    {unidades ? <div><button className='content-start' onClick={() => vaciarCarro()}> Vaciar carro</button></div> : <Link to="/"><p className= "text-green-400">click aqui para volver al inicio</p></Link>}
+    {unidades ? <div><button className='content-start bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 border border-red-500 rounded"' onClick={() => vaciarCarro()}> Vaciar carro</button></div> : <Link to="/"><button className= "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">click aqui para volver al inicio</button></Link>}
+    {unidades ? <button onClick={addPedido} className= "bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 border border-green-400 rounded">Finalizar compra</button> : <div></div>}
+    
     </>
     )
 }

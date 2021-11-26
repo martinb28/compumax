@@ -3,6 +3,7 @@ import ItemList from './ItemList/ItemList';
 import  db from '../../lib/firebaseConfig';
 import { collection, query, where, getDocs  } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
+import { SpinnerDotted } from 'spinners-react';
 
 const ItemListContainer = () => {
         
@@ -31,7 +32,7 @@ const ItemListContainer = () => {
             <div>
                     <h1 className= 'text-center underline uppercase'>{categoriaId}</h1>
                     <div className='grid grid-flow-row grid-rows-2 grid-cols-3 gap-1'>
-                            {cargando ? <h2>Cargando productos...</h2> : <ItemList productos={productos}/>}
+                            {cargando ? <SpinnerDotted className='m-72' size={90} thickness={102} speed={100} color="rgba(58, 57, 172, 1)" /> : <ItemList productos={productos}/>}
                     </div> 
             </div>
     )

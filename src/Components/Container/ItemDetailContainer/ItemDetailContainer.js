@@ -3,6 +3,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import  db from '../../../lib/firebaseConfig';
 import { doc, getDoc  } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
+import { SpinnerDotted } from 'spinners-react';
 
 export const ItemDetailContainer = () => {
   const [productos, setProductos] = useState({});
@@ -21,7 +22,7 @@ export const ItemDetailContainer = () => {
     })
   }, [id]);
 
-  return cargando ? <h3>Cargando...</h3> : <ItemDetail {...productos} />;
+  return cargando ? <SpinnerDotted className='m-72' size={90} thickness={102} speed={100} color="rgba(58, 57, 172, 1)" /> : <ItemDetail {...productos} />;
 };
 
 export default ItemDetailContainer;

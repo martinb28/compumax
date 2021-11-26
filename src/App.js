@@ -6,6 +6,7 @@ import ItemListContainer from './Components/Container/ItemListContainer';
 import ItemDetailContainer from  './Components/Container/ItemDetailContainer/ItemDetailContainer';
 import {CartFuncion} from './Components/context/CartContext'
 import Cart from './Components/Cart/Cart';
+import 'notyf/notyf.min.css';
 
 function App() {
     return (

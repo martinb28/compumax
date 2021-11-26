@@ -3,9 +3,12 @@ import { Context } from "../context/CartContext";
 import { Link } from 'react-router-dom';
 import  db from '../../lib/firebaseConfig';
 import { collection, addDoc  } from 'firebase/firestore';
+import NotyfContext from '../../NotyfContext';
+
 
 const Cart = (props) =>{
     const {cart, unidades, total, quitarItem, vaciarCarro} = useContext(Context)
+    const notyf = useContext(NotyfContext);
     const addPedido = async () => {                
         try {
             const docRef = await addDoc(collection(db, "ordenes"), {
@@ -18,7 +21,7 @@ const Cart = (props) =>{
                 total: total
 
             });
-            console.log("DocumentID: ", docRef.id);
+            notyf.success( `Se ha registrado su compra bajo el ID: ${docRef.id} `);
           } catch (e) {
             console.error("Error: ", e);
           }

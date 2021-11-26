@@ -1,15 +1,17 @@
 
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import NotyfContext from '../../../NotyfContext';
 
 const ItemCount = (props) => {
 
     const [stock, setStock] = useState(props.stock)
     const [unidades, setUnidades] = useState(0)
+    const notyf = useContext(NotyfContext);
 
     const handleStock = {
         sumaStock:()=>{
             if (stock===0){
-                alert('No hay stock disponible')
+                notyf.error('No hay stock disponible')
             } else{
                 setUnidades(unidades + 1)
                 setStock(stock - 1)
@@ -18,7 +20,7 @@ const ItemCount = (props) => {
 
         restaStock:()=>{
             if (unidades===0){
-                alert('Cantidad Incorrecta')
+                notyf.error('Cantidad incorrecta')
             } else{
                 setUnidades(unidades - 1)
                 setStock(stock + 1)

@@ -30,6 +30,10 @@ Uso de React Router Dom para la navegación
 
 Uso de Firebase como base de datos
 
+Uso de Notyf para alertas
+
+Uso de react-spinner como visual para la carga
+
 ![Demo Compumax](https://s10.gifyu.com/images/React_App_-_Personal_-_Microsoft__Edge_2021-11-03_20-59-49_SparkVideo-1.gif)
 ### Autor
 #### Martin Adrian Bugao

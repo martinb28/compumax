@@ -29,7 +29,7 @@ const Cart = (props) =>{
     
     return(
     <>
-    <p> tu carrito acumuló un total de ${total} y tiene {unidades} unidad(es)</p>
+    <h1 className = 'font-sans text-2xl antialiased font-semibold'>Tu carrito acumuló un total de ${total} y tiene {unidades} unidad(es)</h1>
     {cart.map((item)=>
             <><div className="flex flex-col border bg-gray-50">
             <h2 className='font-semibold'>nombre:</h2> <h3 className='text-blue-500'>{item.nombre}</h3>

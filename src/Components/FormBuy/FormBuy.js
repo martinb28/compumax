@@ -40,7 +40,7 @@ export default function FormBuy() {
             <input style={{'border':"1px solid black"}} type='email' onChange={(e)=>setMail(e.target.value)} /><br/>
             <label className='font-semibold'>Telefono</label><br/>
             <input style={{'border':"1px solid black"}} type='tel' onChange={(e)=>setTelefono(e.target.value)} /><br/><br/>
-            <button onClick={addPedido} className= "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Finalizar compra</button>
+            <button onClick={addPedido} className= "bg-green-300 hover:bg-green-400 text-white font-bold py-2 px-4 border border-green-400 rounded">Finalizar compra</button>
         </div>
     )
 }

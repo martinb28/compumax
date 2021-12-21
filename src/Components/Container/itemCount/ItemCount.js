@@ -5,7 +5,7 @@ import NotyfContext from '../../../NotyfContext';
 const ItemCount = (props) => {
 
     const [stock, setStock] = useState(props.stock)
-    const [unidades, setUnidades] = useState(0)
+    const [unidades, setUnidades] = useState(1)
     const notyf = useContext(NotyfContext);
 
     const handleStock = {
@@ -19,7 +19,7 @@ const ItemCount = (props) => {
         },
 
         restaStock:()=>{
-            if (unidades===0){
+            if (unidades===1){
                 notyf.error('Cantidad incorrecta')
             } else{
                 setUnidades(unidades - 1)

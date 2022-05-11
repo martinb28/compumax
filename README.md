@@ -38,4 +38,4 @@ Uso de react-spinner como visual para la carga
 ### Autor
 #### Martin Adrian Bugao
 
-2021 - Curso de React en CoderHouse
+2021
